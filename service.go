@@ -22,3 +22,12 @@ func (s Service) String() string {
 	}
 	return nameByService[Unknown]
 }
+
+// Env retrieves current git repository status from environment variables.
+func (s Service) Env() Env {
+	switch s {
+	case TravisCI:
+		return newTravis()
+	}
+	return new(Env)
+}
