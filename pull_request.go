@@ -2,7 +2,8 @@ package cienv
 
 // PullRequest contains GitHub pull request metadata
 type PullRequest struct {
-	Number int
-	Branch string
-	Slug   string
+	Number     int
+	HeadBranch string
+	BaseBranch string
+	Slug       string
 }

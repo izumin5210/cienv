@@ -11,9 +11,10 @@ func newTravis() {
 		num, err := strconv.Atoi(v)
 		if err == nil {
 			pr = PullRequest{
-				Number: num,
-				Branch: os.Getenv("TRAVIS_PULL_REQUEST_BRANCH"),
-				Slug:   os.Get("TRAVIS_PULL_REQUEST_SLUG"),
+				Number:     num,
+				BaseBranch: os.Getenv("TRAVIS_BRANCH"),
+				HeadBranch: os.Getenv("TRAVIS_PULL_REQUEST_BRANCH"),
+				Slug:       os.Get("TRAVIS_PULL_REQUEST_SLUG"),
 			}
 		}
 	}
