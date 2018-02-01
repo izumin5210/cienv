@@ -7,3 +7,8 @@ type Env struct {
 	Tag         string
 	PullRequest PullRequest
 }
+
+// IsPullRequest returns true if this build is triggered by a pull request.
+func (e Env) IsPullRequest() bool {
+	return e.PullRequest != PullRequest{}
+}
