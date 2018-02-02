@@ -19,11 +19,12 @@ func newTravis() {
 		}
 	}
 	return Env{
-		commit: Commit{
+		Commit: Commit{
 			Hash:    os.Getenv("TRAVIS_COMMIT"),
 			Message: os.Getenv("TRAVIS_COMMIT_MESSAGE"),
 		},
-		branch: os.Getenv("TRAVIS_BRANCH"),
-		tag:    os.Getenv("TRAVIS_TAG"),
+		Branch:      os.Getenv("TRAVIS_BRANCH"),
+		Tag:         os.Getenv("TRAVIS_TAG"),
+		PullRequest: pr,
 	}
 }
