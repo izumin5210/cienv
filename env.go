@@ -6,6 +6,7 @@ type Env struct {
 	Branch      string
 	Tag         string
 	PullRequest PullRequest
+	BuildResult bool
 }
 
 // IsPullRequest returns true if this build is triggered by a pull request.

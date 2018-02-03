@@ -26,5 +26,6 @@ func newTravis() {
 		Branch:      os.Getenv("TRAVIS_BRANCH"),
 		Tag:         os.Getenv("TRAVIS_TAG"),
 		PullRequest: pr,
+		BuildResult: os.Getenv("TRAVIS_TEST_RESUT") == "0",
 	}
 }
