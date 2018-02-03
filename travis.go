@@ -5,7 +5,7 @@ import (
 	"strconv"
 )
 
-func newTravis() {
+func newTravis() Env {
 	var pr PullRequest
 	if v := os.Getenv("TRAVIS_PULL_REQUEST"); v != "false" {
 		num, err := strconv.Atoi(v)
@@ -14,7 +14,7 @@ func newTravis() {
 				Number:     num,
 				BaseBranch: os.Getenv("TRAVIS_BRANCH"),
 				HeadBranch: os.Getenv("TRAVIS_PULL_REQUEST_BRANCH"),
-				Slug:       os.Get("TRAVIS_PULL_REQUEST_SLUG"),
+				Slug:       os.Getenv("TRAVIS_PULL_REQUEST_SLUG"),
 			}
 		}
 	}
